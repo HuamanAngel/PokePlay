@@ -1,7 +1,30 @@
-﻿@{
+﻿@using Blog.Controllers;
+
+@model List<Usuario>
+
+@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.email</td>
+                        <td>@item.nombre</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
